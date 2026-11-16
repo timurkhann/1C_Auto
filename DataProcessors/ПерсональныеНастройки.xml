@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<DataProcessor uuid="d2735c8b-7984-4b1f-9ef3-4dab18570e74">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.ПерсональныеНастройки" category="Object">
+				<xr:TypeId>e557c734-5dd0-4518-8177-64deb44c6da6</xr:TypeId>
+				<xr:ValueId>57e1c819-ecae-4536-b8c5-74a7e537c48b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.ПерсональныеНастройки" category="Manager">
+				<xr:TypeId>e26a64f5-3009-43bf-b5dd-7f9bfa7d5b93</xr:TypeId>
+				<xr:ValueId>3957b91f-9269-4d17-9f3b-8c0b430151a8</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ПерсональныеНастройки</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>a98578c5-09e3-4eb0-87e7-3e26c7ecb4db</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Form>ФормаНастройкиПользователя</Form>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>

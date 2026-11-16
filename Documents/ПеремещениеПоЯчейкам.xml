@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Document uuid="bc59d78f-059d-4de6-ab1d-7ba2064239cd">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.ПеремещениеПоЯчейкам" category="Object">
+				<xr:TypeId>1bc0e8cf-db5e-4447-95b3-1e341665a4ec</xr:TypeId>
+				<xr:ValueId>949277ae-ee46-4f97-aebf-eaf1ac0804aa</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentRef.ПеремещениеПоЯчейкам" category="Ref">
+				<xr:TypeId>6f026a84-aabf-4eb5-bab3-a21a60a6ac72</xr:TypeId>
+				<xr:ValueId>22eba09b-e870-4528-b8ca-8b9a79b2717e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentSelection.ПеремещениеПоЯчейкам" category="Selection">
+				<xr:TypeId>e7e72fc6-ab11-4452-89db-7d1f58025b52</xr:TypeId>
+				<xr:ValueId>3cb2a4de-7c28-400f-8b8a-4171b746aef1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentList.ПеремещениеПоЯчейкам" category="List">
+				<xr:TypeId>37601b98-32c6-478b-b789-250e26f850c6</xr:TypeId>
+				<xr:ValueId>92675e55-403b-47f5-bdae-ec8f056742a0</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentManager.ПеремещениеПоЯчейкам" category="Manager">
+				<xr:TypeId>38e9298f-3ec5-4be7-9302-2dbe3347159f</xr:TypeId>
+				<xr:ValueId>2a838da1-6d54-4412-be16-ea2dd9e8d161</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>ManagerModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ПеремещениеПоЯчейкам</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>91471b5f-b5c5-4f2b-8391-da9a4223fbe4</ExtendedConfigurationObject>
+			<RegisterRecords/>
+		</Properties>
+		<ChildObjects/>
+	</Document>
+</MetaDataObject>

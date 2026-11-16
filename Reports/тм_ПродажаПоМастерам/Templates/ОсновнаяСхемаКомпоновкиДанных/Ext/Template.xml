@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Начисления.ДокументОснование КАК ДокументЗН
+ПОМЕСТИТЬ вт_ПродажиЗН
+ИЗ
+	Документ.тм_НачислениеЗарплаты.Начисления КАК Начисления
+ГДЕ
+	Начисления.Ссылка.Дата МЕЖДУ &amp;НачПериода И &amp;КонПериода
+	И Начисления.Ссылка.Проведен
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказПокупателяРаботы.Ссылка КАК ДокументЗН,
+	СУММА(ЗаказПокупателяРаботы.Цена * ЗаказПокупателяРаботы.Кратность) КАК Сумма
+ПОМЕСТИТЬ вт_СуммыПоЗН
+ИЗ
+	Документ.ЗаказПокупателя.Работы КАК ЗаказПокупателяРаботы
+ГДЕ
+	ЗаказПокупателяРаботы.Ссылка В
+			(ВЫБРАТЬ
+				вт_ПродажиЗН.ДокументЗН КАК ДокументЗН
+			ИЗ
+				вт_ПродажиЗН КАК вт_ПродажиЗН)
+	И ЗаказПокупателяРаботы.тм_Сотрудник &lt;&gt; ЗНАЧЕНИЕ(Справочник.Сотрудники.)
+	И ЗаказПокупателяРаботы.Ссылка.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийЗаказПокупателя.ЗаказНаряд)
+	И ЗаказПокупателяРаботы.Ссылка.СостояниеЗаказа = ЗНАЧЕНИЕ(Справочник.СостоянияЗаказНарядов.Завершен)
+	И ЗаказПокупателяРаботы.Ссылка.ВариантЗавершения = ЗНАЧЕНИЕ(Перечисление.ВариантыЗавершенияЗаказа.Успешно)
+	И ЗаказПокупателяРаботы.Ссылка.Проведен
+
+СГРУППИРОВАТЬ ПО
+	ЗаказПокупателяРаботы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МастераПриемщики.тм_Сотрудник КАК Сотрудник,
+	МастераПриемщики.Ссылка КАК ДокументЗН
+ПОМЕСТИТЬ ВТ_МастераПриемщики
+ИЗ
+	Документ.ЗаказПокупателя.тм_МастераПриемщики КАК МастераПриемщики
+ГДЕ
+	МастераПриемщики.Ссылка В
+			(ВЫБРАТЬ
+				вт_СуммыПоЗН.ДокументЗН КАК ДокументЗН
+			ИЗ
+				вт_СуммыПоЗН КАК вт_СуммыПоЗН)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(МастераПриемщики.тм_Сотрудник) КАК КоличествоМастеров,
+	МастераПриемщики.Ссылка КАК ДокументЗН
+ПОМЕСТИТЬ ВТ_МастераПриемщикиКоличество
+ИЗ
+	Документ.ЗаказПокупателя.тм_МастераПриемщики КАК МастераПриемщики
+ГДЕ
+	МастераПриемщики.Ссылка В
+			(ВЫБРАТЬ
+				вт_СуммыПоЗН.ДокументЗН КАК ДокументЗН
+			ИЗ
+				вт_СуммыПоЗН КАК вт_СуммыПоЗН)
+
+СГРУППИРОВАТЬ ПО
+	МастераПриемщики.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МастераПриемщики.Сотрудник КАК Сотрудник,
+	СУММА(СуммыПоЗН.Сумма / МастераПриемщикиКоличество.КоличествоМастеров) КАК Сумма
+ИЗ
+	ВТ_МастераПриемщики КАК МастераПриемщики
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_МастераПриемщикиКоличество КАК МастераПриемщикиКоличество
+		ПО МастераПриемщики.ДокументЗН = МастераПриемщикиКоличество.ДокументЗН
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ вт_СуммыПоЗН КАК СуммыПоЗН
+		ПО МастераПриемщики.ДокументЗН = СуммыПоЗН.ДокументЗН
+
+СГРУППИРОВАТЬ ПО
+	МастераПриемщики.Сотрудник</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>КоличествоДокументов</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество документов</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДокументов</dataPath>
+		<expression>Сумма(ВычислитьВыражениеСГруппировкойМассив("Количество(ДокументЗН)"))</expression>
+	</totalField>
+	<parameter>
+		<name>НачПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Табличный</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>cca63933-3e7a-49b1-849e-721dfece036e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>0d295eff-a179-42b6-ad03-607548a8be2a</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

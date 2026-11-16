@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Document uuid="9e796fbd-3d88-4fda-9660-b8b68fbdee90">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.СчетФактура" category="Object">
+				<xr:TypeId>cf577d59-1436-4350-b440-9cb685ff796b</xr:TypeId>
+				<xr:ValueId>e78f1d87-3223-416a-91ad-ac664835d8f2</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentRef.СчетФактура" category="Ref">
+				<xr:TypeId>75804315-c2c3-40b9-8b08-b5a09c78a9b0</xr:TypeId>
+				<xr:ValueId>56fffc00-70b9-41c9-ba47-79232468ef20</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentSelection.СчетФактура" category="Selection">
+				<xr:TypeId>c965d8c9-bb7d-4b79-88f0-fbb42bcc41a5</xr:TypeId>
+				<xr:ValueId>31be21f6-2a6f-41ed-836c-d3fe90211b1e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentList.СчетФактура" category="List">
+				<xr:TypeId>032b0955-f5af-4d91-ade4-040e81941a1b</xr:TypeId>
+				<xr:ValueId>3b7da746-6b72-4482-9f8e-5a9a3ec87177</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentManager.СчетФактура" category="Manager">
+				<xr:TypeId>77428bf7-cf49-41b8-b0b9-c238a80edcf4</xr:TypeId>
+				<xr:ValueId>be02e91b-eee0-44f1-8ebe-d432373bfcfc</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>ManagerModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>СчетФактура</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>bc0f80db-2084-4ebc-8fab-df30c343112b</ExtendedConfigurationObject>
+			<RegisterRecords/>
+		</Properties>
+		<ChildObjects/>
+	</Document>
+</MetaDataObject>

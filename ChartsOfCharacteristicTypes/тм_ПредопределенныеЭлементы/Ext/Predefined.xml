@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PlanOfCharacteristicKindPredefinedItems" version="2.21">
+	<Item id="505becd4-3c5d-4ba3-bc2d-7dfbfcb49db8">
+		<Name>ЗонаПриемкиDacar</Name>
+		<Code>000000004</Code>
+		<Description>Зона приемки Dacar</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Ячейки</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="602ff85b-2990-41a0-9005-a6649cd81252">
+		<Name>ЗонаПриемкиExpress</Name>
+		<Code>000000003</Code>
+		<Description>Зона приемки express</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Ячейки</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="8c66e254-eaf6-4c15-877c-c1e1b4fa3a0b">
+		<Name>ИспользоватьНовыйПоиск</Name>
+		<Code>000000014</Code>
+		<Description>Использовать новый поиск</Description>
+		<Type>
+			<v8:Type>xs:boolean</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="b04686e6-6bb8-44f0-8e01-16a9bd6e7656">
+		<Name>Контрагент_Иксора</Name>
+		<Code>000000010</Code>
+		<Description>Контрагент (Иксора)</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="8c635c7b-e606-4076-86cb-ad16d8dc474b">
+		<Name>НастройкаВыгрузкиПрайса</Name>
+		<Code>000000012</Code>
+		<Description>Настройка выгрузки прайса</Description>
+		<Type>
+			<v8:Type>xs:boolean</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Ячейки</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+			<v8:Type>xs:string</v8:Type>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СтруктурныеЕдиницы</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ДополнительныеРеквизитыИСведения</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>10</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+			<v8:StringQualifiers>
+				<v8:Length>10</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="1b685d07-516d-4700-bd21-9036f820abca">
+		<Name>НастройкаУстановкиЦенНоменклатуры</Name>
+		<Code>000000001</Code>
+		<Description>Настройка установки цен номенклатуры</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.тм_НастройкиУстановкиЦенНоменклатуры</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="2b7b7e14-4557-47c9-96a7-5e07fee93866">
+		<Name>ОповеститьПользователяОМинимальномОстаткеПриСтартеСистемы</Name>
+		<Code>000000005</Code>
+		<Description>Оповестить пользователя о минимальном остатке при старте системы</Description>
+		<Type>
+			<v8:Type>xs:boolean</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="cc89a129-db35-47a8-9c3e-130f5fde0c2e">
+		<Name>Организация_Куликова</Name>
+		<Code>000000007</Code>
+		<Description>Организация ИП Куликова</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="62b678c6-908d-4f84-b290-09f43c64b127">
+		<Name>Организация_СавицкаяОксана</Name>
+		<Code>000000013</Code>
+		<Description>Организация ИП Савицкая Оксана</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="c3b4f06b-5883-4fb3-a3e2-124f1af1ea24">
+		<Name>Организация_Савицкий</Name>
+		<Code>000000008</Code>
+		<Description>Организация ИП Савицкий</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="b1e3238c-a4a4-4522-aa4d-a6a7970dd046">
+		<Name>ПланОбменаТСД</Name>
+		<Code>000000002</Code>
+		<Description>План обмена ТСД</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.тм_ОбменТСД</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="0bb9594c-344b-4606-adee-12f4094c09b4">
+		<Name>Производитель</Name>
+		<Code>000000006</Code>
+		<Description>Производитель</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ДополнительныеРеквизитыИСведения</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="4bcf11cb-2283-408e-8f5b-3e06e41792c0">
+		<Name>РегистрироватьНоменклатуруНаВыгрузкуТСД</Name>
+		<Code>000000009</Code>
+		<Description>Регистрировать номенклатуру на выгрузку ТСД</Description>
+		<Type>
+			<v8:Type>xs:boolean</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="12aeee9b-9a69-4d9c-bd42-9bc934ff5bc5">
+		<Name>СостояниеЗаказНаряда_ВРаботе</Name>
+		<Code>000000015</Code>
+		<Description>Состояние заказ наряда в работе</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СостоянияЗаказНарядов</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="7527add9-9a60-463b-91cf-f4f16fd0b6f3">
+		<Name>Сотрудники_ИсполнителиРабот</Name>
+		<Code>000000017</Code>
+		<Description>Сотрудники исполнители работ</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Сотрудники</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="8e59e082-e7b3-4321-932d-35214006dc2c">
+		<Name>Сотрудники_МастераПриемщики</Name>
+		<Code>000000016</Code>
+		<Description>Сотрудники мастера-приемщики</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Сотрудники</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="5e39095a-07b6-4391-adc3-a45d87dd15b5">
+		<Name>СуммаНачисленияЗаРаботу</Name>
+		<Code>000000011</Code>
+		<Description>Сумма начисления за работу</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ДополнительныеРеквизитыИСведения</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>

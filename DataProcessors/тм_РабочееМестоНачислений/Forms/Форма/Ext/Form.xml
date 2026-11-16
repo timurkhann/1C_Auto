@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияАктуальность" id="65">
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;fontsize 12&gt;&lt;colorstyle -46&gt;Декорация актуальность&lt;/&gt;&lt;/&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<ContextMenu name="ДекорацияАктуальностьКонтекстноеМеню" id="66"/>
+			<ExtendedTooltip name="ДекорацияАктуальностьРасширеннаяПодсказка" id="67"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаОтборы" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="50"/>
+			<ChildItems>
+				<InputField name="Сотрудник" id="54">
+					<DataPath>Сотрудник</DataPath>
+					<ClearButton>true</ClearButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ContextMenu name="СотрудникКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="СотрудникРасширеннаяПодсказка" id="56"/>
+					<Events>
+						<Event name="OnChange">СотрудникПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Состояние" id="51">
+					<DataPath>Состояние</DataPath>
+					<ClearButton>true</ClearButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<QuickChoice>true</QuickChoice>
+					<ChooseType>false</ChooseType>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ContextMenu name="СостояниеКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="53"/>
+					<Events>
+						<Event name="OnChange">СостояниеПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ДанныеПоСотрудникам" id="1">
+			<Representation>Tree</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ДанныеПоСотрудникам</DataPath>
+			<ContextMenu name="ДанныеПоСотрудникамКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДанныеПоСотрудникамКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ДанныеПоСотрудникамСортироватьСписокПоВозрастанию" id="57">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДанныеПоСотрудникам.StandardCommand.SortListAsc</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="ДанныеПоСотрудникамСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="58"/>
+					</Button>
+					<Button name="ДанныеПоСотрудникамСортироватьСписокПоУбыванию" id="59">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДанныеПоСотрудникам.StandardCommand.SortListDesc</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="ДанныеПоСотрудникамСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="60"/>
+					</Button>
+					<Button name="ДанныеПоСотрудникамСвернуть" id="61">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Свернуть</CommandName>
+						<ExtendedTooltip name="ДанныеПоСотрудникамСвернутьРасширеннаяПодсказка" id="62"/>
+					</Button>
+					<Button name="ДанныеПоСотрудникамРазвернуть" id="63">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Развернуть</CommandName>
+						<ExtendedTooltip name="ДанныеПоСотрудникамРазвернутьРасширеннаяПодсказка" id="64"/>
+					</Button>
+					<Button name="ДанныеПоСотрудникамЗаполнить" id="26">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.Command.Заполнить</CommandName>
+						<ButtonImportance>Main</ButtonImportance>
+						<ExtendedTooltip name="ДанныеПоСотрудникамЗаполнитьРасширеннаяПодсказка" id="27"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДанныеПоСотрудникамРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ДанныеПоСотрудникамСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ДанныеПоСотрудникам</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеПоСотрудникамСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ДанныеПоСотрудникамСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДанныеПоСотрудникамСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ДанныеПоСотрудникам</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеПоСотрудникамСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ДанныеПоСотрудникамСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДанныеПоСотрудникамУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ДанныеПоСотрудникам</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеПоСотрудникамУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ДанныеПоСотрудникамУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ДанныеПоСотрудникамСотрудник" id="28">
+					<DataPath>ДанныеПоСотрудникам.Сотрудник</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамСотрудникКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамСотрудникРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ДанныеПоСотрудникамЗаказНаряд" id="34">
+					<DataPath>ДанныеПоСотрудникам.ЗаказНаряд</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамЗаказНарядКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамЗаказНарядРасширеннаяПодсказка" id="36"/>
+				</InputField>
+				<InputField name="ДанныеПоСотрудникамСостояние" id="31">
+					<DataPath>ДанныеПоСотрудникам.Состояние</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамСостояниеКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамСостояниеРасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<InputField name="ДанныеПоСотрудникамПроцентПолучаемыйСотрудником" id="43">
+					<DataPath>ДанныеПоСотрудникам.ПроцентПолучаемыйСотрудником</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамПроцентПолучаемыйСотрудникомКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамПроцентПолучаемыйСотрудникомРасширеннаяПодсказка" id="45"/>
+				</InputField>
+				<InputField name="ДанныеПоСотрудникамСуммаРаботы" id="37">
+					<DataPath>ДанныеПоСотрудникам.СуммаРаботы</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамСуммаРаботыКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамСуммаРаботыРасширеннаяПодсказка" id="39"/>
+				</InputField>
+				<InputField name="ДанныеПоСотрудникамСуммаРаботыПредопределенная" id="40">
+					<DataPath>ДанныеПоСотрудникам.СуммаРаботыПредопределенная</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамСуммаРаботыПредопределеннаяКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамСуммаРаботыПредопределеннаяРасширеннаяПодсказка" id="42"/>
+				</InputField>
+				<InputField name="ДанныеПоСотрудникамСуммаПланФакт" id="46">
+					<DataPath>ДанныеПоСотрудникам.СуммаПланФакт</DataPath>
+					<TitleBackColor>style:ToolTipBackColor</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеПоСотрудникамСуммаПланФактКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ДанныеПоСотрудникамСуммаПланФактРасширеннаяПодсказка" id="48"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.тм_РабочееМестоНачислений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДанныеПоСотрудникам" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные по сотрудникам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Сотрудник" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудник</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Состояние" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СостоянияЗаказНарядов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗаказНаряд" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказ наряд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СуммаПланФакт" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма (план/факт)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаРаботы" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма работы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаРаботыПредопределенная" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма работы предопределенная</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПроцентПолучаемыйСотрудником" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент получаемый сотрудником</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>3</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Состояние" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СостоянияЗаказНарядов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Сотрудник" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+		<Command name="Свернуть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Свернуть</Action>
+		</Command>
+		<Command name="Развернуть" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Развернуть</Action>
+		</Command>
+	</Commands>
+</Form>

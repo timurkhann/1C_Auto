@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<CheckBoxField name="ЗаполненВТСД" id="46">
+					<DataPath>Объект.ЗаполненВТСД</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleTextColor>style:AccentColor</TitleTextColor>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Switcher</CheckBoxType>
+					<ContextMenu name="ЗаполненВТСДКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ЗаполненВТСДРасширеннаяПодсказка" id="48"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СтруктурнаяЕдиница" id="49">
+			<DataPath>Объект.СтруктурнаяЕдиница</DataPath>
+			<ContextMenu name="СтруктурнаяЕдиницаКонтекстноеМеню" id="50"/>
+			<ExtendedTooltip name="СтруктурнаяЕдиницаРасширеннаяПодсказка" id="51"/>
+		</InputField>
+		<UsualGroup name="ГруппаОснование" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОснованиеРасширеннаяПодсказка" id="56"/>
+			<ChildItems>
+				<LabelField name="ДокументОснование" id="10">
+					<DataPath>Объект.ДокументОснование</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ДокументОснованиеКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДокументОснованиеРасширеннаяПодсказка" id="12"/>
+				</LabelField>
+				<LabelField name="ПеремещениеПоЯчейкам" id="57">
+					<DataPath>Объект.ПеремещениеПоЯчейкам</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ПеремещениеПоЯчейкамКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="ПеремещениеПоЯчейкамРасширеннаяПодсказка" id="59"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Запасы" id="13">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Запасы</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЗапасыКонтекстноеМеню" id="14"/>
+			<AutoCommandBar name="ЗапасыКоманднаяПанель" id="15"/>
+			<ExtendedTooltip name="ЗапасыРасширеннаяПодсказка" id="16"/>
+			<SearchStringAddition name="ЗапасыСтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>Запасы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗапасыСтрокаПоискаКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ЗапасыСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЗапасыСостояниеПросмотра" id="20">
+				<AdditionSource>
+					<Item>Запасы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗапасыСостояниеПросмотраКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ЗапасыСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЗапасыУправлениеПоиском" id="23">
+				<AdditionSource>
+					<Item>Запасы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗапасыУправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ЗапасыУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ЗапасыНомерСтроки" id="26">
+					<DataPath>Объект.Запасы.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЗапасыНомерСтрокиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ЗапасыНомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="ЗапасыНоменклатура" id="29">
+					<DataPath>Объект.Запасы.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЗапасыНоменклатураКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ЗапасыНоменклатураРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ЗапасыСтруктурнаяЕдиница" id="35">
+					<DataPath>1/0:792fe5ac-30e1-4073-ba16-d8be1b5458ce/0:337ffc12-7eb4-4adc-bf23-157bcdd0f00c</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЗапасыСтруктурнаяЕдиницаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ЗапасыСтруктурнаяЕдиницаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ЗапасыКоличество" id="32">
+					<DataPath>Объект.Запасы.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЗапасыКоличествоКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ЗапасыКоличествоРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ЗапасыКоличествоФакт" id="52">
+					<DataPath>Объект.Запасы.КоличествоФакт</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЗапасыКоличествоФактКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ЗапасыКоличествоФактРасширеннаяПодсказка" id="54"/>
+				</InputField>
+				<InputField name="ЗапасыЯчейка" id="38">
+					<DataPath>Объект.Запасы.Ячейка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЗапасыЯчейкаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ЗапасыЯчейкаРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Автор" id="7">
+			<DataPath>Объект.Автор</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="АвторКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Комментарий" id="43">
+			<DataPath>Объект.Комментарий</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="45"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.тм_ЗаявкаНаРазмещение</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>
