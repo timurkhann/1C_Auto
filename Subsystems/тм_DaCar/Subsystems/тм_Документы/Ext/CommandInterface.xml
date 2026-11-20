@@ -6,21 +6,6 @@
 				<xr:Common>true</xr:Common>
 			</Visibility>
 		</Command>
-		<Command name="Document.тм_НачислениеЗарплаты.StandardCommand.OpenList">
-			<Visibility>
-				<xr:Common>false</xr:Common>
-			</Visibility>
-		</Command>
-		<Command name="Document.тм_ВыплатаЗарплаты.StandardCommand.OpenList">
-			<Visibility>
-				<xr:Common>false</xr:Common>
-			</Visibility>
-		</Command>
-		<Command name="Document.тм_ПроданныйТовар.StandardCommand.Create">
-			<Visibility>
-				<xr:Common>true</xr:Common>
-			</Visibility>
-		</Command>
 	</CommandsVisibility>
 	<CommandsPlacement>
 		<Command name="Document.тм_ПроданныйТовар.StandardCommand.OpenList">
@@ -51,12 +36,6 @@
 			<CommandGroup>NavigationPanelOrdinary</CommandGroup>
 		</Command>
 		<Command name="Document.тм_УстановкаЦенРабот.StandardCommand.OpenList">
-			<CommandGroup>NavigationPanelOrdinary</CommandGroup>
-		</Command>
-		<Command name="Document.тм_НачислениеЗарплаты.StandardCommand.OpenList">
-			<CommandGroup>NavigationPanelOrdinary</CommandGroup>
-		</Command>
-		<Command name="Document.тм_ВыплатаЗарплаты.StandardCommand.OpenList">
 			<CommandGroup>NavigationPanelOrdinary</CommandGroup>
 		</Command>
 	</CommandsOrder>

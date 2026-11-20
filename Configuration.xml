@@ -220,9 +220,10 @@
 			<Document>тм_ВыплатаЗарплаты</Document>
 			<Document>тм_ЗаявкаНаРазмещение</Document>
 			<Document>тм_НачислениеЗарплаты</Document>
-			<Document>тм_ПроданныйТовар</Document>
+			<Document>тм_УдалитьПроданныйТовар</Document>
 			<Document>тм_СписаниеБонусов</Document>
 			<Document>тм_УстановкаЦенРабот</Document>
+			<Document>тм_ПроданныйТовар</Document>
 			<Enum>ТипыНоменклатуры</Enum>
 			<Enum>ВариантыЗавершенияЗаказа</Enum>
 			<Enum>СтатусыУтвержденияПлатежей</Enum>

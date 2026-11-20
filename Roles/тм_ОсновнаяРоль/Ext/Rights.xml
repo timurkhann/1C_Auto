@@ -86,7 +86,7 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.тм_ПроданныйТовар</name>
+		<name>Document.тм_УдалитьПроданныйТовар</name>
 		<right>
 			<name>Delete</name>
 			<value>false</value>

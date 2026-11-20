@@ -7,6 +7,9 @@
 	<RepostOnWrite>true</RepostOnWrite>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -76,61 +79,23 @@
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаОтбор" id="53">
-			<Title>
+		<InputField name="ДатаПроданныхТоваров" id="10">
+			<DataPath>Объект.ДатаПроданныхТоваров</DataPath>
+			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Отбор</v8:content>
+					<v8:content>Дата продажи товаров</v8:content>
 				</v8:item>
-			</Title>
-			<TitleTextColor>style:FieldSelectionBackColor</TitleTextColor>
-			<Group>Vertical</Group>
-			<Behavior>PopUp</Behavior>
-			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="54"/>
-			<ChildItems>
-				<InputField name="ДатаПроданныхТоваров" id="10">
-					<DataPath>Объект.ДатаПроданныхТоваров</DataPath>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Дата продажи товаров</v8:content>
-						</v8:item>
-					</ToolTip>
-					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
-					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
-					<Width>15</Width>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ContextMenu name="ДатаПроданныхТоваровКонтекстноеМеню" id="11"/>
-					<ExtendedTooltip name="ДатаПроданныхТоваровРасширеннаяПодсказка" id="12"/>
-					<Events>
-						<Event name="OnChange">ДатаПроданныхТоваровПриИзменении</Event>
-					</Events>
-				</InputField>
-				<InputField name="Склад" id="7">
-					<DataPath>Объект.Склад</DataPath>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Склад с которого был продан товар</v8:content>
-						</v8:item>
-					</ToolTip>
-					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
-					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
-					<Width>15</Width>
-					<HorizontalStretch>false</HorizontalStretch>
-					<OpenButton>false</OpenButton>
-					<ContextMenu name="СкладКонтекстноеМеню" id="8"/>
-					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="9"/>
-					<Events>
-						<Event name="OnChange">СкладПриИзменении</Event>
-					</Events>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+			</ToolTip>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<Width>15</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="ДатаПроданныхТоваровКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ДатаПроданныхТоваровРасширеннаяПодсказка" id="12"/>
+		</InputField>
 		<Table name="Запасы" id="13">
 			<Representation>Tree</Representation>
 			<RowSelectionMode>Cell</RowSelectionMode>
@@ -195,150 +160,94 @@
 				<Event name="BeforeAddRow">ЗапасыПередНачаломДобавления</Event>
 			</Events>
 			<ChildItems>
-				<LabelField name="ЗапасыНомерСтроки" id="26">
-					<DataPath>Объект.Запасы.LineNumber</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<FooterText>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Итого:</v8:content>
-						</v8:item>
-					</FooterText>
-					<AutoEditMode>true</AutoEditMode>
-					<ContextMenu name="ЗапасыНомерСтрокиКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="ЗапасыНомерСтрокиРасширеннаяПодсказка" id="28"/>
-				</LabelField>
-				<InputField name="ЗапасыДокумент" id="42">
-					<DataPath>Объект.Запасы.Документ</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
-					<DropListButton>false</DropListButton>
-					<ChoiceButton>false</ChoiceButton>
-					<ContextMenu name="ЗапасыДокументКонтекстноеМеню" id="43"/>
-					<ExtendedTooltip name="ЗапасыДокументРасширеннаяПодсказка" id="44"/>
-				</InputField>
-				<InputField name="ЗапасыНоменклатура" id="29">
-					<DataPath>Объект.Запасы.Номенклатура</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
-					<ContextMenu name="ЗапасыНоменклатураКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ЗапасыНоменклатураРасширеннаяПодсказка" id="31"/>
-				</InputField>
-				<InputField name="ЗапасыАртикул" id="32">
-					<DataPath>Объект.Запасы.Артикул</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
-					<ContextMenu name="ЗапасыАртикулКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="ЗапасыАртикулРасширеннаяПодсказка" id="34"/>
-				</InputField>
-				<InputField name="ЗапасыПроизводитель" id="45">
-					<DataPath>Объект.Запасы.Производитель</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
-					<ContextMenu name="ЗапасыПроизводительКонтекстноеМеню" id="46"/>
-					<ExtendedTooltip name="ЗапасыПроизводительРасширеннаяПодсказка" id="47"/>
-				</InputField>
-				<InputField name="ЗапасыКоличество" id="35">
-					<DataPath>Объект.Запасы.Количество</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<FooterDataPath>Объект.Запасы.TotalКоличество</FooterDataPath>
-					<AutoEditMode>true</AutoEditMode>
-					<ContextMenu name="ЗапасыКоличествоКонтекстноеМеню" id="36"/>
-					<ExtendedTooltip name="ЗапасыКоличествоРасширеннаяПодсказка" id="37"/>
-				</InputField>
-				<ColumnGroup name="ГруппаDaCar" id="67">
+				<ColumnGroup name="ЗапасыГруппаОсновные" id="127">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>DaCar</v8:content>
+							<v8:content>Запасы группа основные</v8:content>
 						</v8:item>
 					</Title>
-					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа da car</v8:content>
+							<v8:content>Запасы группа основные</v8:content>
 						</v8:item>
 					</ToolTip>
 					<Group>Horizontal</Group>
-					<ShowInHeader>true</ShowInHeader>
-					<ExtendedTooltip name="ГруппаDaCarРасширеннаяПодсказка" id="68"/>
+					<FixingInTable>Left</FixingInTable>
+					<ExtendedTooltip name="ЗапасыГруппаОсновныеРасширеннаяПодсказка" id="128"/>
 					<ChildItems>
-						<InputField name="ЗапасыОстаток" id="61">
-							<DataPath>Объект.Запасы.Остаток</DataPath>
-							<Title>
+						<LabelField name="ЗапасыНомерСтроки" id="26">
+							<DataPath>Объект.Запасы.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterText>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Остаток</v8:content>
+									<v8:content>Итого:</v8:content>
 								</v8:item>
-							</Title>
-							<EditMode>EnterOnInput</EditMode>
-							<FooterDataPath>Объект.Запасы.TotalОстаток</FooterDataPath>
+							</FooterText>
 							<AutoEditMode>true</AutoEditMode>
-							<ContextMenu name="ЗапасыОстатокКонтекстноеМеню" id="62"/>
-							<ExtendedTooltip name="ЗапасыОстатокРасширеннаяПодсказка" id="63"/>
+							<Width>4</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ЗапасыНомерСтрокиКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ЗапасыНомерСтрокиРасширеннаяПодсказка" id="28"/>
+						</LabelField>
+						<InputField name="ЗапасыДокумент" id="42">
+							<DataPath>Объект.Запасы.Документ</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ContextMenu name="ЗапасыДокументКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="ЗапасыДокументРасширеннаяПодсказка" id="44"/>
 						</InputField>
-						<InputField name="ЗапасыРезерв" id="64">
-							<DataPath>Объект.Запасы.Резерв</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Резерв</v8:content>
-								</v8:item>
-							</Title>
+						<InputField name="ЗапасыНоменклатура" id="29">
+							<DataPath>Объект.Запасы.Номенклатура</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<FooterDataPath>Объект.Запасы.TotalРезерв</FooterDataPath>
 							<AutoEditMode>true</AutoEditMode>
-							<ContextMenu name="ЗапасыРезервКонтекстноеМеню" id="65"/>
-							<ExtendedTooltip name="ЗапасыРезервРасширеннаяПодсказка" id="66"/>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ЗапасыНоменклатураКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ЗапасыНоменклатураРасширеннаяПодсказка" id="31"/>
 						</InputField>
-					</ChildItems>
-				</ColumnGroup>
-				<ColumnGroup name="ГруппаExpress" id="69">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Express</v8:content>
-						</v8:item>
-					</Title>
-					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Группа express</v8:content>
-						</v8:item>
-					</ToolTip>
-					<Group>Horizontal</Group>
-					<ShowInHeader>true</ShowInHeader>
-					<ExtendedTooltip name="ГруппаExpressРасширеннаяПодсказка" id="70"/>
-					<ChildItems>
-						<InputField name="ЗапасыОстатокExpress" id="71">
-							<DataPath>Объект.Запасы.ОстатокExpress</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Остаток</v8:content>
-								</v8:item>
-							</Title>
+						<InputField name="ЗапасыАртикул" id="32">
+							<DataPath>Объект.Запасы.Артикул</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<FooterDataPath>Объект.Запасы.TotalОстатокExpress</FooterDataPath>
 							<AutoEditMode>true</AutoEditMode>
-							<ContextMenu name="ЗапасыОстатокExpressКонтекстноеМеню" id="72"/>
-							<ExtendedTooltip name="ЗапасыОстатокExpressРасширеннаяПодсказка" id="73"/>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ЗапасыАртикулКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ЗапасыАртикулРасширеннаяПодсказка" id="34"/>
 						</InputField>
-						<InputField name="ЗапасыРезервExpress" id="74">
-							<DataPath>Объект.Запасы.РезервExpress</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Резерв</v8:content>
-								</v8:item>
-							</Title>
+						<InputField name="ЗапасыПроизводитель" id="45">
+							<DataPath>Объект.Запасы.Производитель</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<FooterDataPath>Объект.Запасы.TotalРезервExpress</FooterDataPath>
 							<AutoEditMode>true</AutoEditMode>
-							<ContextMenu name="ЗапасыРезервExpressКонтекстноеМеню" id="75"/>
-							<ExtendedTooltip name="ЗапасыРезервExpressРасширеннаяПодсказка" id="76"/>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ЗапасыПроизводительКонтекстноеМеню" id="46"/>
+							<ExtendedTooltip name="ЗапасыПроизводительРасширеннаяПодсказка" id="47"/>
+						</InputField>
+						<InputField name="ЗапасыКоличество" id="35">
+							<DataPath>Объект.Запасы.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Объект.Запасы.TotalКоличество</FooterDataPath>
+							<AutoEditMode>true</AutoEditMode>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ЗапасыКоличествоКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ЗапасыКоличествоРасширеннаяПодсказка" id="37"/>
+						</InputField>
+						<InputField name="ЗапасыЦена" id="123">
+							<DataPath>Объект.Запасы.Цена</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ЗапасыЦенаКонтекстноеМеню" id="124"/>
+							<ExtendedTooltip name="ЗапасыЦенаРасширеннаяПодсказка" id="125"/>
 						</InputField>
 					</ChildItems>
 				</ColumnGroup>

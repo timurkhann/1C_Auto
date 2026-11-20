@@ -22,9 +22,9 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ЗаказПокупателя</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.СписаниеЗапасов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ОприходованиеЗапасов</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.тм_ПроданныйТовар</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.тм_ЗаявкаНаРазмещение</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Role.тм_ОсновнаяРоль</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.тм_ПроданныйТовар</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects>

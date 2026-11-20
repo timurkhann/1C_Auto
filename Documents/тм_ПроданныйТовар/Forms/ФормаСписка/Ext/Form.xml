@@ -20,13 +20,13 @@
 		</UsualGroup>
 		<Table name="Список" id="3">
 			<Representation>List</Representation>
-			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
 			<RowSelectionMode>Cell</RowSelectionMode>
 			<InitialTreeView>ExpandTopLevel</InitialTreeView>
 			<EnableStartDrag>true</EnableStartDrag>
 			<DataPath>Список</DataPath>
 			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<ShowCommandBar>auto</ShowCommandBar>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -43,9 +43,7 @@
 			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
 			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
-			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
-				<Autofill>false</Autofill>
-			</AutoCommandBar>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5"/>
 			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
 				<AdditionSource>
@@ -80,7 +78,7 @@
 						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</HeaderPicture>
 					<ValuesPicture>
-						<xr:Ref>0:d2abe053-5f18-4da7-bffb-20386787193f</xr:Ref>
+						<xr:Ref>StdPicture.ExecuteTask</xr:Ref>
 						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</ValuesPicture>
 					<ContextMenu name="ИндексКонтекстноеМеню" id="32"/>
@@ -101,11 +99,6 @@
 					<DataPath>Список.ДатаПроданныхТоваров</DataPath>
 					<ContextMenu name="ДатаПроданныхТоваровКонтекстноеМеню" id="26"/>
 					<ExtendedTooltip name="ДатаПроданныхТоваровРасширеннаяПодсказка" id="27"/>
-				</LabelField>
-				<LabelField name="Склад" id="22">
-					<DataPath>Список.Склад</DataPath>
-					<ContextMenu name="СкладКонтекстноеМеню" id="23"/>
-					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="24"/>
 				</LabelField>
 				<LabelField name="Автор" id="28">
 					<DataPath>Список.Автор</DataPath>
@@ -130,22 +123,10 @@
 	Документтм_ПроданныйТовар.Номер КАК Номер,
 	Документтм_ПроданныйТовар.Дата КАК Дата,
 	Документтм_ПроданныйТовар.Проведен КАК Проведен,
-	Документтм_ПроданныйТовар.Склад КАК Склад,
 	Документтм_ПроданныйТовар.ДатаПроданныхТоваров КАК ДатаПроданныхТоваров,
 	Документтм_ПроданныйТовар.Организация КАК Организация,
 	Документтм_ПроданныйТовар.Автор КАК Автор,
 	Документтм_ПроданныйТовар.Обработано КАК Обработано,
-	Документтм_ПроданныйТовар.Запасы.(
-		Ссылка КАК Ссылка,
-		НомерСтроки КАК НомерСтроки,
-		Документ КАК Документ,
-		Номенклатура КАК Номенклатура,
-		Артикул КАК Артикул,
-		Количество КАК Количество,
-		Производитель КАК Производитель,
-		ЕстьОснование КАК ЕстьОснование
-	) КАК Запасы,
-	Документтм_ПроданныйТовар.МоментВремени КАК МоментВремени,
 	ВЫБОР
 		КОГДА Документтм_ПроданныйТовар.Обработано
 			ТОГДА 3
